@@ -264,3 +264,134 @@ Baca selengkapnya, [array](https://www.w3schools.com/go/go_arrays.php).
 Baca selengkapnya, [slices](https://www.w3schools.com/go/go_slices.php).
 
 ## Tipe Data Map
+- Berisikan data dengan tipe data yang sama, namun kita bisa menentukan jenis tipe data yang akan kita gunakan.
+- Map adalah tipe data yang terdiri dari psasangan key dan value.
+- Jumlah data yang kita masukan pada map boleh sebanyak-banyaknya.
+  ```go
+  // MAP_NAME := map[type key]type value { ...key:value }
+  john := map[string]string{
+    "name": "john doe"
+  }
+  ```
+Baca selengkapnya, [maps](https://www.w3schools.com/go/go_maps.php).
+
+## If, if else, nested if statement
+```go
+/**
+ * if condition {
+ * ....code here, will be execuuted if conditions is true
+ * }
+ **/
+
+if 1 > 0 {
+  fmt.Println("True");
+}
+```
+
+Baca Selengkapnya, [conditions](https://www.w3schools.com/go/go_conditions.php)
+
+## Switch case
+```go
+/**
+ * ## Single Switch Case
+ * switch expression {
+ * case x:
+ * ... code block
+ * case y:
+ * ... code block
+ * case z:
+ * ...
+ * default:
+ * ... code block
+ * }
+ * */
+day := 4
+switch day {
+case 1:
+  fmt.Println("Monday")
+default:
+  fmt.Println("Sunday")
+}
+```
+Baca selengkapnya, [switch case](https://www.w3schools.com/go/go_switch_multi.php).
+
+## Perulangan For
+```go
+/**
+ * For biasa
+ * for statement1; statement2; statement3 {
+ * ...code to be executed for each iteration
+ * }
+ **/
+
+/**
+ * For range
+ * for index, value := array|slice|map {
+ * ...code to be executed for each iteration
+ * }
+ * 
+ * index bisa juga berarti key (jika pada map)
+ **/
+```
+Baca selengkapnya, [for loop](https://www.w3schools.com/go/go_loops.php).
+
+## Function
+```go
+/**
+ * func FunctionName() {
+ * ...code to be executed
+ * }
+ * **/
+```
+Baca selengkapnya, [function](https://www.w3schools.com/go/go_functions.php).
+
+## Defer, Panic, Recover
+- Defer function adalah function yang bisa kita jadwalkan untuk dieksekusi setelah sebuah function selesai dieksekusi.
+- Defer function akan selalu dieksekusi walaupun terjadi error.<br>
+
+## Panic
+- Panic function adalah function yang bisa kta gunakan untuk menghentikan program.
+- Biasana dipanggil ketika terjadi panic saat program ketika berjalan.
+- Saat panic dipanggil kode program akan terhenti namun defer akan tetap dijalankan.
+
+## Recover
+- Recover adalah function yang bisa kita gunakan untuk menangkap data panic
+- Dengan recover proses panic akan terhenti sehingga program akan tetap berjalan.
+Contoh Defer, Panic, recover:
+  ```go
+  func endApp(){
+    fmt.Println("App ended")
+    // contoh recover
+    messages := recover()
+    fmt.Println("Messages", messages)
+  }
+
+  func runApp(err bool){
+    // logging akan dijalankan diakhir function walaupun diletakan di awal atau terjadi error.
+    defer endApp()
+    if(err){
+      // contoh panic
+      panic("Error")
+    }
+    fmt.Println("App Run")
+  }
+  ```
+
+## Struct
+- struct adalah sebuah tipe data yang digunakan untuk menggabungkan tipe data dalam satu kesatuan.
+- struct biasanya representasi data dalan program aplikasi yang dibuat.
+- struct adalah kumpulan dari beberapa field.<br>
+Contoh:
+```go
+type Person struct {
+  Name, Job string
+  Age int
+  Salary int
+}
+```
+Baca selengkapnya, [struct](https://www.w3schools.com/go/go_struct.php).
+
+## Interface
+- interface adalah tipe data yang abstract.
+- Berisikan definisi-definisi method.
+- Biasanaya digunakan sebagai contract.

@@ -21,10 +21,10 @@ func exVariable() {
 	// cara 2
 	lastName := "Doe"
 	// atau bisa juga seperti ini (tidak disarankan)
-	var nilai string
-	nilai = "90"
+	// var nilai string
+	// nilai = "90"
 
-	fmt.Println(firstName, lastName, nilai)
+	fmt.Println(firstName, lastName)
 
 	// update
 	firstName = "Jean"
@@ -100,6 +100,8 @@ func exSlices() {
 	 * var SLICE_NAME []type = ARRAY_NAME[low:]
 	 * var SLICE_NAME []type = ARRAY_NAME[:high]
 	 * var SLICE_NAME []type = ARRAY_NAME[:]
+	 * *Cara 4 (Membuat slice menggunakan fungsi make())
+	 * SLICE_NAME:= make([]type, panjang, kapasitas)
 	 */
 	// Cara 1
 	var slice1 = []int{1, 2, 3}
@@ -111,6 +113,15 @@ func exSlices() {
 	slices4 := arr[2:3]
 	slices5 := arr[1:]
 	slices6 := arr[:]
+	// cara 4 (menggunakan fungsi make())
+	slice7 := make([]string, 2, 5)
+	// -- mengisi array dari slice
+	slice7[0] = "John"
+	slice7[1] = "Doe"
+	// untuk menambahkan item ke slice menggunakna append()
+
+	//slice7[3] = "Slice7" // error --> panjang maksmimal 2 item
+
 	fmt.Println(
 		slice1,
 		slice2,
@@ -118,7 +129,23 @@ func exSlices() {
 		slices4,
 		slices5,
 		slices6,
+		slice7,
 	)
+}
+
+func exMap() {
+	/**
+	 **Cara 1
+	 * MAP_NAME := map[type key]type value { ...key:value }
+	 **Mengubah data
+	 * MAP_NAME[key] = value
+	 */
+
+	john := map[string]string{
+		"name": "john doe",
+	}
+
+	fmt.Println((john))
 }
 
 func main() {
@@ -128,4 +155,5 @@ func main() {
 	exArray()
 	exArray()
 	exSlices()
+	exMap()
 }
