@@ -395,3 +395,33 @@ Baca selengkapnya, [struct](https://www.w3schools.com/go/go_struct.php).
 - interface adalah tipe data yang abstract.
 - Berisikan definisi-definisi method.
 - Biasanaya digunakan sebagai contract.
+
+Baca selengkapnya, [inteface](https://www.geeksforgeeks.org/interfaces-in-golang/).
+
+## Nil
+- Nil atau kosong.
+- Pada bahasa pemrogrman lain, objek yang belum diinisiasikan maka secara otomatis nilainya adalah null atau nil.
+- Pada golang berbeda, variabel dengan tipe tertentu kan dibuatkan nilai defaulnya.
+- Nil hanta bisa digunakan pada beberapa tipe data saja seperti pada interface, function, map, slice, pointer dan chanel.
+
+Baca selengkapnya, [nil](https://blog.ruangdeveloper.com/golang-nil/).
+
+## Type Assertions
+- Merukan kemampuan untuk mengubah tipe data menjadi tipe data yang diinginkan.
+- Seringkali digunakan ketika bertemu dengan data interface kosong.
+
+## Pointer
+- Secara default, di Go-lang variabel itu di passing by value, bukan by reference.
+- Artinya, jika kita mengirim sebuah variabel ke dalam function, method atau variabel lain, sebenarnya yang dikirim adalah duplikasi valuenya.
+- Pointer adalah kemampuan membuat reference ke lokasi data memory yang sama tanpa menduplikasi daya yang sudah ada.
+- Dengan pointer kita bisa membuat pass by reference.
+
+Baca selengkapnya, [pointer](https://www.geeksforgeeks.org/pointers-in-golang/).
+
+## Pointer di Function
+- Saat kita membuat function, secara default adalah pass by value. artinya data akan di copy dikirim ke function tersebut.
+- Oleh karena itu, jika kita mnegubah data didalam function, data yang asli tidak akan pernah berubah.
+- Hal ini membuat variabel menjadi aman, karena tidak akan diubah.
+- Namun kadang kita perlu mengubah data asli parameter.
+- untuk mealukanya kita memerlukan pointer di function
+- menjadikan sebuah parameter sebagai pointer, kita bisa menggunakan operator '*' di parameternya.

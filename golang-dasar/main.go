@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func HelloWorld() {
 	fmt.Println("Hello Wolrd")
@@ -148,6 +150,54 @@ func exMap() {
 	fmt.Println((john))
 }
 
+func exNil(name string) map[string]string {
+	if name == "" {
+		return nil
+	} else {
+		return map[string]string{
+			"name": name,
+		}
+	}
+}
+
+type Profile struct {
+	Firstname, LastName string
+}
+
+func exPointer() {
+	/**
+	 **Operator '&'
+	 **Operator asterisk '*'
+	 **Operator new
+	 * operator new adalah cara lain membuat pointer selain menggunakan operator &
+	 */
+	// john := Profile{"John", "doe"}
+	// operator'&'
+	// jean := &john
+	// perubahan pada jean artinya mengubah john juga sebaliknya
+	// jean.Firstname = "fulan"
+	// fmt.Println(john, jean)
+
+	// operator '*'
+	// jean = &Profile{"Ummah", "Khan"} // jean tidak lagi mengacu ke john.
+	// jean.Firstname="Aminah" //perubahan pada jean tidak akan berefek pada john
+	// fmt.Println(john, jean)
+
+	// penggunaan asterisk
+	// *jean = Profile{"Ummah", "Khan"} // megubah nilai reference jean
+	// jean.Firstname="Aisyah" // perubahan pada jean juga akan mengubah john
+	// fmt.Println(john, jean)
+
+	// penggunaan operator new
+	var john *Profile = new(Profile);
+	var jean *Profile = john;
+
+	jean.Firstname = "Jean"
+
+	fmt.Println(john, jean)
+	
+}
+
 func main() {
 	HelloWorld()
 	exVariable()
@@ -156,4 +206,6 @@ func main() {
 	exArray()
 	exSlices()
 	exMap()
+	fmt.Println(exNil("Sekhudin"))
+	exPointer()
 }
